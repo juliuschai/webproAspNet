@@ -16,6 +16,7 @@ public partial class _Default : System.Web.UI.Page
     {
         string email = emailTextBox.Text.Trim();
         string password = passTextBox.Text.Trim();
+
         // check if the email field is empty
         if (email.Equals(""))
         {
