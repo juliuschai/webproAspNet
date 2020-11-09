@@ -1,0 +1,8 @@
+www.a2hosting.com/kb/developer-corner/mysql/connecting-to-mysql-using-microsoft-net
+dev.mysql.com/downloads/windows/visualstudio/
+dev.mysql.com/downloads/connector/net/
+
+CREATE TABLE users (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50), email VARCHAR(50), password VARCHAR(50), INDEX(email));
+
+new nuget package install MySql.Data
+
