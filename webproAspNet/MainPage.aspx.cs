@@ -41,4 +41,9 @@ public partial class MainPage : System.Web.UI.Page
         Session.Clear(); //remove session
         Response.Redirect("MainPage.aspx");
     }
+
+    protected void CreatePostButtonClick(object sender, EventArgs e)
+    {
+        Response.Redirect("CreatePost.aspx");
+    }
 }

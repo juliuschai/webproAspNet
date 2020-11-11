@@ -15,6 +15,10 @@
             <asp:Button ID="registerButton" runat="server" OnClick="RegisterButtonClick" Text="Register" />
             <br />
             <asp:Button ID="logoutButton" runat="server" OnClick="LogoutButtonClick" Text="Logout" />
+            <br />
+            <asp:Label ID="Label1" runat="server" Text="Post"></asp:Label>
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="CreatePostButtonClick" Text="Create New Post" />
         </div>
     </form>
 </body>
