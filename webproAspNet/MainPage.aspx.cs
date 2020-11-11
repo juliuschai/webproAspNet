@@ -9,6 +9,7 @@ public partial class MainPage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+         ViewAllPost.Text = PostModel.read();
         if (Session["userId"] is null)
         {
             // is Guest

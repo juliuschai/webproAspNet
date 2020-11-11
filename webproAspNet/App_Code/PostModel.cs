@@ -46,6 +46,43 @@ public class PostModel
         // close the connection
         db.closeConnection();
     }
+    public static string read()
+    {
+        // Read post
+         DB db = new DB();
+
+      
+
+        MySqlCommand command = new MySqlCommand("SELECT `title` , `content` FROM `posts`", db.getConnection());
+        command.CommandType = System.Data.CommandType.Text;
+      
+
+        db.openConnection();
+
+        if (command.ExecuteNonQuery() != 1)
+        {
+            // mysql error
+            Trace.TraceError("Mysql error");
+        }
+
+        string temp = "";
+        MySqlDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+            temp += "Title: ";
+            temp += reader["title"].ToString();
+            temp += "<br/>";
+            temp += reader["content"].ToString();
+            temp += "<br/>";
+            temp += "<br/>";
+
+        }
+
+        // close the connection
+        db.closeConnection();
+
+        return temp;
+    }
 
     public static void update(string id)
     {

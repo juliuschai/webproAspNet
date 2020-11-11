@@ -19,7 +19,16 @@
             <asp:Label ID="Label1" runat="server" Text="Post"></asp:Label>
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="CreatePostButtonClick" Text="Create New Post" />
+            <br />
+           
         </div>
     </form>
+     <br />
+     <asp:Label ID="LabelAllPost" runat="server" Text="All Posts:"></asp:Label>
+     <br />
+     <br />
+    <asp:Label ID="ViewAllPost" runat="server" Text="No Post Has Been Made"></asp:Label>
+     <br />
+   
 </body>
 </html>
