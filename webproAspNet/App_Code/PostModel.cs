@@ -49,13 +49,10 @@ public class PostModel
     public static string read()
     {
         // Read post
-         DB db = new DB();
+        DB db = new DB();
 
-      
-
-        MySqlCommand command = new MySqlCommand("SELECT `title` , `content` FROM `posts`", db.getConnection());
+        MySqlCommand command = new MySqlCommand("SELECT `id`, `title`, `content` FROM `posts`", db.getConnection());
         command.CommandType = System.Data.CommandType.Text;
-      
 
         db.openConnection();
 
@@ -69,13 +66,15 @@ public class PostModel
         MySqlDataReader reader = command.ExecuteReader();
         while (reader.Read())
         {
+            temp += "Post: ";
+            temp += reader["id"].ToString();
+            temp += "<br/>";
             temp += "Title: ";
             temp += reader["title"].ToString();
             temp += "<br/>";
             temp += reader["content"].ToString();
             temp += "<br/>";
             temp += "<br/>";
-
         }
 
         // close the connection
@@ -89,8 +88,24 @@ public class PostModel
         // Update post
     }
 
-    public static void delete(string id)
+    public static void delete(string pid)
     {
         // Delete post
+        DB db = new DB();
+
+        MySqlCommand command = new MySqlCommand("DELETE FROM `posts` WHERE ID ="+"@pid", db.getConnection());
+        command.Parameters.Add("@pid", MySqlDbType.VarChar).Value = pid;
+
+        // open the connection
+        db.openConnection();
+
+        if (command.ExecuteNonQuery() != 1)
+        {
+            // mysql error
+            Trace.TraceError("Mysql error");
+        }
+
+        // close the connection
+        db.closeConnection();
     }
 }

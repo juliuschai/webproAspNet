@@ -47,4 +47,12 @@ public partial class MainPage : System.Web.UI.Page
     {
         Response.Redirect("CreatePost.aspx");
     }
+
+    protected void DeletePostButtonClick(object sender, EventArgs e)
+    {
+        string pid = postIdTextBox.Text.Trim();
+        PostModel.delete(pid);
+
+        Response.Redirect("MainPage.aspx");
+    }
 }
