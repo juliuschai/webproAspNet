@@ -18,6 +18,7 @@ public partial class MainPage : System.Web.UI.Page
             logoutButton.Visible = false;
             createPostButton.Visible = false;
             createPostLabel.Visible = false;
+            updatePostButon.Visible = false;
         }
         else
         {
@@ -28,6 +29,7 @@ public partial class MainPage : System.Web.UI.Page
             userLabel.Text = Session["username"] + " - " + Session["email"];
             createPostButton.Visible = true;
             createPostLabel.Visible = true;
+            updatePostButon.Visible = true;
         }
     }
 
