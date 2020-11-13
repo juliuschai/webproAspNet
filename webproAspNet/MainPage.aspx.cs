@@ -16,6 +16,8 @@ public partial class MainPage : System.Web.UI.Page
             registerButton.Visible = true;
             loginButton.Visible = true;
             logoutButton.Visible = false;
+            createPostButton.Visible = false;
+            createPostLabel.Visible = false;
         }
         else
         {
@@ -24,6 +26,8 @@ public partial class MainPage : System.Web.UI.Page
             loginButton.Visible = false;
             logoutButton.Visible = true;
             userLabel.Text = Session["username"] + " - " + Session["email"];
+            createPostButton.Visible = true;
+            createPostLabel.Visible = true;
         }
     }
 
@@ -48,11 +52,10 @@ public partial class MainPage : System.Web.UI.Page
         Response.Redirect("CreatePost.aspx");
     }
 
-    protected void DeletePostButtonClick(object sender, EventArgs e)
-    {
-        string pid = postIdTextBox.Text.Trim();
-        PostModel.delete(pid);
+   
 
-        Response.Redirect("MainPage.aspx");
+    protected void updatePostButonClick(object sender, EventArgs e)
+    {
+        Response.Redirect("update_delete_post.aspx");
     }
 }

@@ -19,12 +19,7 @@
             <asp:Label ID="createPostLabel" runat="server" Text="Post"></asp:Label>
             <br />
             <asp:Button ID="createPostButton" runat="server" OnClick="CreatePostButtonClick" Text="Create New Post" />
-            <br />
-            <br />
-            <asp:Label ID="deletePostLabel" runat="server" Text="Input Post Number Below"></asp:Label>
-            <br />
-            <asp:TextBox ID="postIdTextBox" runat="server"></asp:TextBox>
-            <asp:Button ID="deletePostButton" runat="server" OnClick="DeletePostButtonClick" Text="Delete Post" />
+             <asp:Button ID="updatePostButon" runat="server" OnClick="updatePostButonClick" Text="update/delete your post" />
             <br />
             <br />
         </div>
